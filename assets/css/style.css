@@ -11,6 +11,7 @@
     margin: 0 auto;
     width: 75%;
     display: flex;
+    background-color: pink;
 }
 
 .movie-title {
@@ -22,10 +23,12 @@
 .movie-screen {
     width: 50%;
     background-color: red;
+    border: dotted black 3px;
 }
 
 .hangman-screen {
     width: 50%;
     text-align: center;
     background-color: blue;
+    border: dotted black 3px;
 }
