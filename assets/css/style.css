@@ -44,3 +44,8 @@ html, body {
     background-color: blue;
     border: dotted black 3px;
 }
+
+#my-word li {
+    display: inline-block;
+    margin: 5px;
+}
