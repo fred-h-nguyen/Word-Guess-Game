@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+}
+
+.header {
+    width: 100%;
+    text-align: center;
+}
+
+.game {
+    margin: 0 auto;
+    width: 75%;
+    display: flex;
+}
+
+.movie-title {
+    margin: 0 auto;
+    width:75%;
+    background-color: green;
+    height: 50px;
+}
+.movie-screen {
+    width: 50%;
+    background-color: red;
+}
+
+.hangman-screen {
+    width: 50%;
+    text-align: center;
+    background-color: blue;
+}
