@@ -4,8 +4,17 @@ var word = [];
 
 // make an array containing movies
 var movieList = ['star-wars', 'harry-potter', 'avengers', 'jurassic-park', 'jaws', 'casino-royale', 'rocky', 'back-to-the-future', 'indiana-jones', 'casablanca'];
-
+//make computer choose a random movie from array
+var chosenWord = movieList[Math.floor(Math.random() * movieList.length)];
+//console.log(chosenWord);
+// make chosenWord into an array of characters
+//var split = function () {
+    word = chosenWord.split('');
+    console.log(word);
 //}
+
+//make underscore including - for spaces
+
 
 //split();
 //underscore();
