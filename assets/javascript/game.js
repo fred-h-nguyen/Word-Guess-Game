@@ -1,12 +1,14 @@
+//variables go here
+var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+var word = [];
+
 // make an array containing movies
+var movieList = ['star-wars', 'harry-potter', 'avengers', 'jurassic-park', 'jaws', 'casino-royale', 'rocky', 'back-to-the-future', 'indiana-jones', 'casablanca'];
 
+//}
 
-//make computer choose a random movie from array
-
-
-//turn word into underscore do this by using string.length and then of those letters add same amount of underscores use a loop
-
-
+//split();
+//underscore();
 //have user pick a letter onkey up event use append to replace underscore with letter
 
 
