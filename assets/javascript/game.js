@@ -15,6 +15,24 @@ var chosenWord = movieList[Math.floor(Math.random() * movieList.length)];
 
 //make underscore including - for spaces
 
+//var underscore = function () {
+    var wordHolder = document.getElementById("word");
+    var wordElem = document.createElement("ul");
+    wordElem.id = "my-word";
+    for (var i = 0; i < word.length; i++) {
+        var letterElem = document.createElement("li");
+        if (word[i] === "-") {
+            letterElem.innerHTML = "-";
+            wordElem.appendChild(letterElem);
+        } else {
+            letterElem.innerHTML = "_";
+            wordElem.appendChild(letterElem);
+        }
+    }
+    wordHolder.appendChild(wordElem);
+    console.log(wordHolder);
+    console.log(wordElem);
+//}
 
 //split();
 //underscore();
