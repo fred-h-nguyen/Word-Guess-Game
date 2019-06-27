@@ -5,8 +5,7 @@ var correct = [];
 var spaces = 0;
 var correctGuess = 0;
 var guessesLeft = 15;
-
-
+var wins = 0;
 //DOM variables
 var wordHolder = document.getElementById("word");
 var wordElem = document.createElement("ul");
@@ -33,8 +32,6 @@ word.forEach(function (letter) {
     }
 });
 
-//make underscore including - for spaces
-
 for (var i = 0; i < correct.length; i++) {
     var letterElem = document.createElement('li');
     letterElem.id = i;
@@ -48,34 +45,33 @@ document.onkeyup = function (event) {
     var check = word.includes(keyPress);
     console.log(check);
     //console.log(keyPress);
-    for (var i = 0;i<word.length; i++){
+    for (var i = 0; i < word.length; i++) {
         var reveal = document.getElementById(i);
         //console.log(reveal);
-        if (word[i]===keyPress){
-            reveal.innerHTML=keyPress;
+        if (word[i] === keyPress) {
+            reveal.innerHTML = keyPress;
             correctGuess++;
             //console.log(correctGuess);
         }
     };
 
-    if (check===false){
-        guessesLeft--;
-        console.log(guessesLeft);
+    var victory = spaces + correctGuess;
+    //console.log(victory);
+    //console.log(word.length);
+    if (victory === word.length) {
+        wins++
+        //console.log(wins);     
     };
     
+    if (check === false) {
+        guessesLeft--;
+        //console.log(guessesLeft);
+    };
+
+
+
+
 }
-
-
-//have user pick a letter onkey up event use append to replace underscore with letter
-
-
-//if letter is in word reveal letter replace underscore
-
-
-//if letter is not lose a life
-
-
 //if all letters revealed win display movie and play song
-
 
 //reset and restart the game
