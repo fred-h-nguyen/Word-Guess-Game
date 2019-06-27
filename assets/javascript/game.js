@@ -45,7 +45,23 @@ for (var i = 0; i < correct.length; i++) {
 // key press capture
 document.onkeyup = function (event) {
     var keyPress = event.key;
+    var check = word.includes(keyPress);
+    console.log(check);
+    //console.log(keyPress);
+    for (var i = 0;i<word.length; i++){
+        var reveal = document.getElementById(i);
+        //console.log(reveal);
+        if (word[i]===keyPress){
+            reveal.innerHTML=keyPress;
+            correctGuess++;
+            //console.log(correctGuess);
+        }
+    };
+
+  
+    
 }
+
 
 //have user pick a letter onkey up event use append to replace underscore with letter
 
