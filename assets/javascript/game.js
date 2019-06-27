@@ -12,22 +12,23 @@ var wins = 0;
 var wordHolder = document.getElementById("word");
 var wordElem = document.createElement("ul");
 wordElem.id = "my-word";
-
+var scoreElem = document.getElementById('score');
+var guessLeftElem = document.getElementById('guessleft');
+var lettersElem = document.getElementById('letters');
 //reset/replay game
-
 var play = function () {
     word = [];
     correct = [];
     spaces = 0;
     correctGuess = 0;
     guessesLeft = 15;
+    guessLeftElem.innerHTML = guessesLeft;
     wordHolder.innerHTML = "";
     wordElem.innerHTML = "";
+    lettersElem = '';
     wordChoice();
-    start();
+    game();
 }
-
-
 // choose a word from arry and turn it into underscores and spaces
 var wordChoice = function () {
     //word array
@@ -58,7 +59,7 @@ var wordChoice = function () {
     }
 };
 // on start
-var start = function () {
+var game = function () {
     //keypress event
     document.onkeyup = function (event) {
         var keyPress = event.key;
@@ -81,14 +82,16 @@ var start = function () {
         if (victory === word.length) {
             // add one to score counter
             wins++
+            scoreElem.innerHTML = wins;
             //restart game
             //if all letters revealed win display movie and play song
             play();
             //console.log(wins);     
         };
-        
+
         if (check === false) {
             guessesLeft--;
+            guessLeftElem.innerHTML = guessesLeft;
             //console.log(guessesLeft);
         };
 
@@ -101,6 +104,9 @@ var start = function () {
 
     }
 };
+
+
+
 
 //start the game
 play();
