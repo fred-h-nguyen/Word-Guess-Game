@@ -6,7 +6,7 @@ var spaces = 0;
 var correctGuess = 0;
 var guessesLeft = 15;
 var wins = 0;
-
+var guessed = [];
 //DOM variables
 
 var wordHolder = document.getElementById("word");
@@ -14,18 +14,19 @@ var wordElem = document.createElement("ul");
 wordElem.id = "my-word";
 var scoreElem = document.getElementById('score');
 var guessLeftElem = document.getElementById('guessleft');
-var lettersElem = document.getElementById('letters');
+var yourGuessElem = document.getElementById('letters');
 //reset/replay game
 var play = function () {
     word = [];
     correct = [];
+    guessed = [];
     spaces = 0;
     correctGuess = 0;
     guessesLeft = 15;
     guessLeftElem.innerHTML = guessesLeft;
     wordHolder.innerHTML = "";
     wordElem.innerHTML = "";
-    lettersElem = '';
+    yourGuessElem.innerHTML = guessed;
     wordChoice();
     game();
 }
@@ -63,6 +64,14 @@ var game = function () {
     //keypress event
     document.onkeyup = function (event) {
         var keyPress = event.key;
+        // on press push key to array 
+        if (guessed.indexOf(keyPress) === -1) {
+            guessed.push(keyPress);
+        }
+        yourGuessElem.innerHTML = guessed;
+        console.log(guessed);
+
+
         // reveal letters by replacing html
         for (var i = 0; i < word.length; i++) {
             var reveal = document.getElementById(i);
