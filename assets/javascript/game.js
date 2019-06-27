@@ -21,8 +21,8 @@ var play = function () {
     spaces = 0;
     correctGuess = 0;
     guessesLeft = 15;
-    wordHolder.innerHTML= "";
-    wordElem.innerHTML= "";
+    wordHolder.innerHTML = "";
+    wordElem.innerHTML = "";
     wordChoice();
     start();
 }
@@ -30,25 +30,25 @@ var play = function () {
 
 // choose a word from arry and turn it into underscores and spaces
 var wordChoice = function () {
+    //word array
     var movieList = ['star-wars', 'harry-potter', 'avengers', 'jurassic-park', 'jaws', 'casino-royale', 'rocky', 'back-to-the-future', 'indiana-jones', 'casablanca'];
-    //make computer choose a random movie from array
+    // chose random word 
     var chosenWord = movieList[Math.floor(Math.random() * movieList.length)];
-    //console.log(chosenWord);
-    // make chosenWord into an array of characters
-
+    // spit word into letters push into array
     word = chosenWord.split('');
     console.log(word);
-    // make a correct variable
+    //make each letter into an underscore or space
     word.forEach(function (letter) {
         if (letter === '-') {
             correct.push(' ');
+            //add to spaces counter
             spaces++;
             //console.log(spaces);
         } else {
             correct.push('_');
         }
     });
-
+    // make a list for the hyphens to put it into the html
     for (var i = 0; i < correct.length; i++) {
         var letterElem = document.createElement('li');
         letterElem.id = i;
@@ -57,38 +57,43 @@ var wordChoice = function () {
         wordHolder.append(wordElem);
     }
 };
-// key press capture
+// on start
 var start = function () {
+    //keypress event
     document.onkeyup = function (event) {
         var keyPress = event.key;
-        var check = word.includes(keyPress);
-        console.log(check);
-        //console.log(keyPress);
+        // reveal letters by replacing html
         for (var i = 0; i < word.length; i++) {
             var reveal = document.getElementById(i);
             //console.log(reveal);
             if (word[i] === keyPress) {
                 reveal.innerHTML = keyPress;
+                //add to correct guess counter
                 correctGuess++;
                 //console.log(correctGuess);
             }
         };
-
+        // check to see if you win or lose
         var victory = spaces + correctGuess;
+        var check = word.includes(keyPress);
         //console.log(victory);
         //console.log(word.length);
         if (victory === word.length) {
+            // add one to score counter
             wins++
+            //restart game
+            //if all letters revealed win display movie and play song
             play();
             //console.log(wins);     
         };
-
+        
         if (check === false) {
             guessesLeft--;
             //console.log(guessesLeft);
         };
 
         if (guessesLeft === 0) {
+            // restart game
             play();
         };
 
@@ -96,6 +101,6 @@ var start = function () {
 
     }
 };
-//if all letters revealed win display movie and play song
+
+//start the game
 play();
-//reset and restart the game
