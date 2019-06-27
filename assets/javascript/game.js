@@ -90,7 +90,7 @@ var game = function () {
         //console.log(word.length);
         if (victory === word.length) {
             // add one to score counter
-            wins++
+            wins++;
             scoreElem.innerHTML = wins;
             //restart game
             //if all letters revealed win display movie and play song
