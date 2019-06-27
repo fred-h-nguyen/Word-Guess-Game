@@ -42,8 +42,10 @@ for (var i = 0; i < correct.length; i++) {
     wordElem.append(letterElem);
     wordHolder.append(wordElem);
 }
-
-
+// key press capture
+document.onkeyup = function (event) {
+    var keyPress = event.key;
+}
 
 //have user pick a letter onkey up event use append to replace underscore with letter
 
