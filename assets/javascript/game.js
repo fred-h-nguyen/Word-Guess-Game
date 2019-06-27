@@ -28,7 +28,7 @@ var play = function () {
 }
 
 
-// make an array containing movies
+// choose a word from arry and turn it into underscores and spaces
 var wordChoice = function () {
     var movieList = ['star-wars', 'harry-potter', 'avengers', 'jurassic-park', 'jaws', 'casino-royale', 'rocky', 'back-to-the-future', 'indiana-jones', 'casablanca'];
     //make computer choose a random movie from array
@@ -41,7 +41,7 @@ var wordChoice = function () {
     // make a correct variable
     word.forEach(function (letter) {
         if (letter === '-') {
-            correct.push('-');
+            correct.push(' ');
             spaces++;
             //console.log(spaces);
         } else {
