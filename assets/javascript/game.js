@@ -58,7 +58,10 @@ document.onkeyup = function (event) {
         }
     };
 
-  
+    if (check===false){
+        guessesLeft--;
+        console.log(guessesLeft);
+    };
     
 }
 
