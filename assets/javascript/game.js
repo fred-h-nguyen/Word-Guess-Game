@@ -68,7 +68,7 @@ var game = function () {
             guessed.push(keyPress);
         }
         yourGuessElem.innerHTML = guessed;
-        console.log(guessed);
+        //console.log(guessed);
 
 
         // reveal letters by replacing html
@@ -77,9 +77,11 @@ var game = function () {
             //console.log(reveal);
             if (word[i] === keyPress) {
                 reveal.innerHTML = keyPress;
+                word[i]=' ';
+                console.log(word);
                 //add to correct guess counter
                 correctGuess++;
-                //console.log(correctGuess);
+                console.log(correctGuess);
             }
         };
         // check to see if you win or lose
