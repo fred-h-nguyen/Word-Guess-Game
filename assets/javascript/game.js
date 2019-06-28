@@ -72,21 +72,30 @@ var game = function () {
 
 
         // reveal letters by replacing html
+        var check = word.includes(keyPress);
+        if (guessed.indexOf(keyPress) != -1) {
+            if (check===false) {
+                guessesLeft--;
+                guessLeftElem.innerHTML = guessesLeft;
+                console.log(guessesLeft);
+            };
+        };
+
         for (var i = 0; i < word.length; i++) {
             var reveal = document.getElementById(i);
             //console.log(reveal);
             if (word[i] === keyPress) {
                 reveal.innerHTML = keyPress;
-                word[i]=' ';
+                word[i] = ' ';
                 console.log(word);
                 //add to correct guess counter
                 correctGuess++;
-                console.log(correctGuess);
+                //console.log(correctGuess);
             }
         };
         // check to see if you win or lose
         var victory = spaces + correctGuess;
-        var check = word.includes(keyPress);
+
         //console.log(victory);
         //console.log(word.length);
         if (victory === word.length) {
@@ -99,20 +108,11 @@ var game = function () {
             //console.log(wins);     
         };
 
-        if (check === false) {
-            guessesLeft--;
-            guessLeftElem.innerHTML = guessesLeft;
-            //console.log(guessesLeft);
-        };
-
         if (guessesLeft === 0) {
             // restart game
             play();
         };
-
-
-
-    }
+    };
 };
 
 
