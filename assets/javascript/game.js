@@ -63,6 +63,7 @@ var game = function () {
     //keypress event
     document.onkeyup = function (event) {
         var keyPress = event.key;
+        console.log(event);
         // on press push key to array 
         if (guessed.indexOf(keyPress) === -1) {
             guessed.push(keyPress);
@@ -73,12 +74,15 @@ var game = function () {
 
         // reveal letters by replacing html
         var check = word.includes(keyPress);
-        if (guessed.indexOf(keyPress) != -1) {
-            if (check===false) {
+        var repeat = function () {
+            if (check === false) {
                 guessesLeft--;
                 guessLeftElem.innerHTML = guessesLeft;
                 console.log(guessesLeft);
             };
+        };
+        if (guessed.indexOf(keyPress) != -1) {
+            repeat();
         };
 
         for (var i = 0; i < word.length; i++) {
