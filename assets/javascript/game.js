@@ -1,4 +1,5 @@
 //variables go here
+var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 var movieList = ['star-wars', 'harry-potter', 'avengers', 'jurassic-park', 'jaws', 'casino-royale', 'rocky', 'back-to-the-future', 'indiana-jones', 'casablanca'];
 var chosenWord = '';
 var word = [];
@@ -82,6 +83,7 @@ var game = function () {
             };
         };
         if (guessed.indexOf(keyPress) != -1) {
+            console.log(guessed.indexOf(keyPress));
             repeat();
         };
 
