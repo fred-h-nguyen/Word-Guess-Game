@@ -14,38 +14,63 @@ html, body {
 }
 
 .header {
-    width: 100%;
+    font-family: 'Fredericka the Great', cursive;
+    color: white;
+    width: 75%;
     text-align: center;
+    font-size: 100px;
+    padding: 15px;
+    margin: 0 auto;
 }
 
 .game {
     margin: 0 auto;
     width: 75%;
     display: flex;
-    background-color: pink;
+    background-color:black;
     flex: 1;
+    color: white;
 }
 
 .movie-title {
     margin: 0 auto;
     width:75%;
-    background-color: green;
     height: 50px;
 }
 .movie-screen {
     width: 50%;
-    background-color: red;
-    border: dotted black 3px;
+    border: dotted white 3px;
 }
 
 .hangman-screen {
     width: 50%;
     text-align: center;
-    background-color: blue;
-    border: dotted black 3px;
+    border: dotted white 3px;
 }
 
 #my-word li {
     display: inline-block;
     margin: 5px;
 }
+
+p {
+    padding: 10px;
+    font-size: 30px;
+}
+
+#instruction{
+    padding: 5px;
+    font-size: 42px;
+    margin-top: 20px;
+}
+
+#word {
+    margin: 30px;
+    font-size: 42px;
+}
+
+body {
+    background-image: url(../images/theaterbackground.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+} 
