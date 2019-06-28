@@ -1,6 +1,6 @@
 //variables go here
 var movieList = ['star-wars', 'harry-potter', 'avengers', 'jurassic-park', 'jaws', 'casino-royale', 'rocky', 'back-to-the-future', 'indiana-jones', 'casablanca'];
-var chosenword = '';
+var chosenWord = '';
 var word = [];
 var correct = [];
 var spaces = 0;
@@ -106,8 +106,12 @@ var game = function () {
             // add one to score counter
             wins++;
             scoreElem.innerHTML = wins;
+            //switch picture
+            var swap = function(){
+                document.getElementById('pic').src = 'assets/images/'+chosenWord+'.jpg';
+            };
+            swap();
             //restart game
-            //if all letters revealed win display movie and play song
             play();
             //console.log(wins);     
         };
