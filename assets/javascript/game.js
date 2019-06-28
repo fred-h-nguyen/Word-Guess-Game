@@ -1,4 +1,6 @@
 //variables go here
+var movieList = ['star-wars', 'harry-potter', 'avengers', 'jurassic-park', 'jaws', 'casino-royale', 'rocky', 'back-to-the-future', 'indiana-jones', 'casablanca'];
+var chosenword = '';
 var word = [];
 var correct = [];
 var spaces = 0;
@@ -31,10 +33,8 @@ var play = function () {
 }
 // choose a word from arry and turn it into underscores and spaces
 var wordChoice = function () {
-    //word array
-    var movieList = ['star-wars', 'harry-potter', 'avengers', 'jurassic-park', 'jaws', 'casino-royale', 'rocky', 'back-to-the-future', 'indiana-jones', 'casablanca'];
     // chose random word 
-    var chosenWord = movieList[Math.floor(Math.random() * movieList.length)];
+    chosenWord = movieList[Math.floor(Math.random() * movieList.length)];
     // spit word into letters push into array
     word = chosenWord.split('');
     console.log(word);
