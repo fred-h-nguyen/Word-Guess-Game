@@ -6,7 +6,7 @@ var word = [];
 var correct = [];
 var spaces = 0;
 var correctGuess = 0;
-var guessesLeft = 15;
+var guessesLeft = 10;
 var wins = 0;
 var guessed = [];
 //DOM variables
