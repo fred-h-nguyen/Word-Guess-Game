@@ -121,6 +121,10 @@ var game = function () {
                 document.getElementById('pic').src = 'assets/images/' + chosenWord + '.jpg';
             };
             swap();
+
+            // play music
+
+            
             //restart game
             play();
             //console.log(wins);     
