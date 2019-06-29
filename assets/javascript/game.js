@@ -18,7 +18,7 @@ var scoreElem = document.getElementById('score');
 var guessLeftElem = document.getElementById('guessleft');
 var yourGuessElem = document.getElementById('letters');
 //reset/replay game
-var play = function () {
+var restart = function () {
     word = [];
     correct = [];
     guessed = [];
@@ -124,15 +124,22 @@ var game = function () {
 
             // play music
 
+            document.getElementById('music').src = 'assets/music/'+chosenWord+'.mp3';
+
+            var audio = document.getElementById('music');
+
+            audio.load();
+            audio.play();
             
+
             //restart game
-            play();
+            restart();
             //console.log(wins);     
         };
 
         if (guessesLeft === 0) {
             // restart game
-            play();
+            restart();
         };
     };
 };
@@ -141,4 +148,4 @@ var game = function () {
 
 
 //start the game
-play();
+restart();
