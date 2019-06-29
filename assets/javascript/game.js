@@ -1,5 +1,5 @@
 //variables go here
-var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+var alphabet = { a: 0, b: 0, c: 0, d: 0, e: 0, f: 0, g: 0, h: 0, i: 0, j: 0, k: 0, l: 0, m: 0, n: 0, o: 0, p: 0, q: 0, r: 0, s: 0, t: 0, u: 0, v: 0, w: 0, x: 0, y: 0, z: 0 }
 var movieList = ['star-wars', 'harry-potter', 'avengers', 'jurassic-park', 'jaws', 'casino-royale', 'rocky', 'back-to-the-future', 'indiana-jones', 'casablanca'];
 var chosenWord = '';
 var word = [];
@@ -65,9 +65,11 @@ var game = function () {
     document.onkeyup = function (event) {
         var keyPress = event.key;
         console.log(event);
+
         // on press push key to array 
         if (guessed.indexOf(keyPress) === -1) {
             guessed.push(keyPress);
+
         }
         yourGuessElem.innerHTML = guessed;
         //console.log(guessed);
@@ -82,8 +84,13 @@ var game = function () {
                 console.log(guessesLeft);
             };
         };
-        if (guessed.indexOf(keyPress) != -1) {
-            console.log(guessed.indexOf(keyPress));
+
+        if (alphabet[keyPress] < 2) {
+            alphabet[keyPress]++;
+            console.log(alphabet[keyPress]);
+        };
+
+        if (alphabet[keyPress] <= 1) {
             repeat();
         };
 
@@ -109,8 +116,8 @@ var game = function () {
             wins++;
             scoreElem.innerHTML = wins;
             //switch picture
-            var swap = function(){
-                document.getElementById('pic').src = 'assets/images/'+chosenWord+'.jpg';
+            var swap = function () {
+                document.getElementById('pic').src = 'assets/images/' + chosenWord + '.jpg';
             };
             swap();
             //restart game
