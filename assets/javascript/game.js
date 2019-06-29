@@ -6,7 +6,7 @@ var word = [];
 var correct = [];
 var spaces = 0;
 var correctGuess = 0;
-var guessesLeft = 10;
+var guessesLeft = 0;
 var wins = 0;
 var guessed = [];
 //DOM variables
@@ -24,7 +24,7 @@ var restart = function () {
     guessed = [];
     spaces = 0;
     correctGuess = 0;
-    guessesLeft = 15;
+    guessesLeft = 10;
     guessLeftElem.innerHTML = guessesLeft;
     wordHolder.innerHTML = "";
     wordElem.innerHTML = "";
