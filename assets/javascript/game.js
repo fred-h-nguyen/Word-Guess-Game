@@ -65,10 +65,11 @@ var game = function () {
     //keypress event
     document.onkeyup = function (event) {
         var keyPress = event.key;
-        console.log(event);
+        var keyNum = event.keyCode;
+        console.log(keyNum);
 
         // on press push key to array 
-        if (guessed.indexOf(keyPress) === -1) {
+        if (guessed.indexOf(keyPress) === -1 && keyNum >= 65 && keyNum <= 90) {
             guessed.push(keyPress);
 
         }
@@ -124,13 +125,13 @@ var game = function () {
 
             // play music
 
-            document.getElementById('music').src = 'assets/music/'+chosenWord+'.mp3';
+            document.getElementById('music').src = 'assets/music/' + chosenWord + '.mp3';
 
             var audio = document.getElementById('music');
 
             audio.load();
             audio.play();
-            
+
 
             //restart game
             restart();
